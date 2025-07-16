@@ -1,18 +1,33 @@
 body {
-    background-color:#F2ECE4 ;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
+    background-color:#F2ECE4;
+    color: #BFBDB4;
+    font-family: 'Courier New', Courier, monospace; /* <-- Deja esta línea como está por ahora */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+main {
+    flex: 1;
+}
+
+/* ESTA ES LA MODIFICACIÓN CLAVE QUE DEBES ASEGURARTE DE TENER */
+/* Esto fuerza a que los elementos con clases de Bootstrap Icons usen su fuente específica */
+[class^="bi-"], [class*=" bi-"] {
+    font-family: "bootstrap-icons" !important;
+}
+
 .whatsapp-logo {
-  position: fixed; /* Fija el elemento en la ventana del navegador */
-  bottom: 20px;    
-  right: 20px;     
-  z-index: 1000;   
-  width: 60px;     
-  height: auto;    
-  border-radius: 50%; 
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
 .form-select {
     background-color: #24261E;
     margin-top: 10px;
@@ -20,35 +35,39 @@ body {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
 }
+
 #Cm1 {
-    margin: 0 auto; /* Centra la imagen */
-    cursor: pointer; /* Cambia el cursor a una manita para indicar que es clickeable */
+    margin: 0 auto;
+    cursor: pointer;
     border: 3px solid #24261E;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    
 }
+
 #Cm1:hover {
-    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
-    border-color: #BFBDB4; /* Cambia el color del borde al pasar el mouse */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Aumenta la sombra al pasar el mouse */
-}
-#bnr{
-    width: 600px;
-    height: auto;
-    margin-top: 20px;
-    border-radius: 10px;  
-    cursor: pointer;
-    border: 3px solid #24261E;
-        
-}
-#bnr:hover{
-    transform: scale(1.1);
-    border-color:#24261E ;
+    transform: scale(1.05);
+    border-color: #BFBDB4;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
-#mensaje{
+
+#bnr {
+    width: 600px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid #24261E;
+}
+
+#bnr:hover {
+    transform: scale(1.05);
+    border-color: #24261E;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#mensaje {
     width: 100%;
     height: 100px;
     margin-top: 20px;
@@ -56,12 +75,14 @@ body {
     border: 3px solid #24261E;
     padding: 10px;
 }
-#btn{
+
+#btn {
     width: 100px;
     position: relative;
     color: #24261E;
 }
-#msj{
+
+#msj {
     color: white;
     font-family: 'Courier New', Courier, monospace;
     background-color: #24261E;
@@ -71,24 +92,140 @@ body {
     border: 3px solid #24261E;
     text-align: center;
 }
+
 .img-prenda {
     width: 250px;
     height: auto;
     margin-top: 20px;
     border-radius: 20px;
 }
+
 .card-link-wrapper {
-  text-decoration: none; /* Quita el subrayado del enlace */
-  color: inherit; /* Hereda el color del texto de su padre */
-  display: block; /* Asegura que el enlace ocupe todo el espacio de la tarjeta */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .card-link-wrapper .card {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Suaviza la transición de los efectos */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .card-link-wrapper:hover .card {
-  transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Agrega una sombra más pronunciada */
-  cursor: pointer; /* Cambia el cursor a un puntero para indicar que es clickeable */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
 }
+
+.rounded-circle {
+    width: 50px;
+    height: 50px;
+}
+
+.rounded-circle:hover {
+    transform: scale(1.2);
+    transition: 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+    background-image: linear-gradient(to right, white, aquamarine);
+    font-weight: bold;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: 40px;
+}
+
+.navbar-brand:hover {
+    background-image: linear-gradient(to right, aquamarine, white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    transition: 0.3s;
+}
+
+.nav-link {
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: white;
+    transition: 0.8s;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+.site-footer {
+    background-color: #24261E;
+    color: #BFBDB4;
+    padding: 40px 0;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.site-footer h5 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-footer ul li {
+    margin-bottom: 10px;
+}
+
+.site-footer ul li a {
+    color: #BFBDB4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer ul li a:hover {
+    color: #fff;
+}
+
+.site-footer .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.site-footer .social-icons a:hover {
+    color: aquamarine;
+}
+
+.site-footer .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.footer-logo {
+    max-width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+.concta{
+    font-weight: bold;
+    cursor: default;
+}
+.concta:hover{
+    color: aquamarine;
+    transition: 0.3s;
+    text-decoration: underline;
+}
+.bi-geo-alt-fill:hover, .bi-telephone-fill:hover, .bi-envelope-fill:hover{
+    color: aquamarine;
+    transition: 0.3s;
+}
+   
